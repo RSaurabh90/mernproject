@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <title> Register Form </title>
+</head>
+{{>navbar}}
+<body>
+    {{!-- <div class="container register mb-5">
+        <div class= "row">
+            <div class= "col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                <h3>Welcome</h3>
+                <p>to the complete MERN backend course</p>
+                <input type="submit" name="" value="Login" /><br /> 
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class= "nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                           aria-controls="home" aria-selected="true"> Registration </a>
+                    </li>
+                    <li class= "nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                           aria-controls="profile" aria-selected="false"> Login </a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading"> Employee Registration Form </h3>
+                        <form action="/register" method="POST">
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name *" value=""
+                                            name="firstname" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email *" value=""
+                                            name="email" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" minlength="10" maxlength="10" name="phone"
+                                            class="form-control" placeholder="Your Phone *" value="" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password *" value=""
+                                            name="password" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name *" value=""
+                                            name="lastname" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="maxl">
+                                            <label class="radio inline">
+                                                <input type="radio" name="gender" value="male" checked>
+                                                <span> Male </span>
+                                            </label>
+                                            <label class="radio inline">
+                                                <input type="radio" name="gender" value="female" checked>
+                                                <span> Female </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter Your Age *" value=""
+                                        name="age" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Confirm Password *" value=""
+                                            name="confirmpassword" />
+                                    </div>
+
+                                    <input type="submit" class="btnRegister" value="Register">
+                                </div>
+
+                            </div>
+                            
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div> --}}
+
+
+
+<!-- Main -->
+	<div class="container register mb-5">
+        <div class= "row">
+            <div class="col-md-6"></div>
+                <!-- Intro -->
+                <article id="intro">
+                    <h2 class="major">Intro</h2>
+                    <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+                    <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                </article>
+
+                <!-- Work -->
+                <article id="work">
+                <h2 class="major">Work</h2>
+                <span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+                <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
+                <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+                </article>
+
+                <!-- About -->
+                <article id="about">
+                <h2 class="major">About</h2>
+                <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+                <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+            crossorigin="anonymous"></script>
+</body>
+</html>
