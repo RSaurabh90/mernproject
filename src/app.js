@@ -4,6 +4,9 @@ const app = express();
 const path = require("path");
 const hbs = require("hbs");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
+const auth = require("./middleware/auth");
 
 require("./db/conn");
 const Register = require("./models/registers")
@@ -13,6 +16,7 @@ const staticPath = path.join(__dirname,"../public");
 const viewsPath = path.join(__dirname,"../templates/views");
 const partialsPath = path.join(__dirname,"../templates/partials");
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
 
 app.use(express.static(staticPath));
@@ -23,6 +27,38 @@ hbs.registerPartials(partialsPath);
 
 app.get("/",(req,res)=>{
     res.render("index");
+});
+
+
+app.get("/secret",auth,(req,res)=>{
+    // console.log(req.cookies.jwt);
+
+    res.render("secret");
+});
+
+app.get("/logout",auth,async(req,res)=>{
+   
+    try {
+            console.log(req.user);
+// for single logout
+            // req.user.tokens = req.user.tokens.filter((currElement)=>{
+            //     return currElement.token !== req.token
+            // })
+
+
+            // for remove all token and logout
+            req.user.tokens = [];
+            
+            res.clearCookie("jwt");
+            console.log("logout successfully");
+         
+            await req.user.save();
+            res.render("login");
+           
+        } catch (error) {
+            res.status(500).send(error);
+        }
+             
 });
 
 app.get("/register",(req,res)=>{
@@ -53,6 +89,13 @@ app.post("/register",async (req,res)=>{
                 console.log("the success part" + registerEmployee);
                 const token = await registerEmployee.generateAuthToken();
                 console.log("the token part" + token);
+                  
+                // cookies
+                res.cookie("jwt",token,{
+                    expires:new Date(Date.now() + 30000),
+                    httpOnly:true
+                });
+
 
                 const registered = await registerEmployee.save();
                 console.log("the page part" + registered);
@@ -77,6 +120,14 @@ app.post("/login",async (req,res)=>{
       
         const token = await useremail.generateAuthToken();
         console.log("the token part" + token);
+
+         // cookies
+         res.cookie("jwt",token,{
+            expires:new Date(Date.now() + 600000),
+            httpOnly:true,
+            // secure:true
+        });
+
 
         if (isMatch) {
             res.status(201).render("index");
